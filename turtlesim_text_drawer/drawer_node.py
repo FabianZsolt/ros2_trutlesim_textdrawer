@@ -25,9 +25,6 @@ class TextDrawerNode(Node):
     def __init__(self):
         super().__init__('text_drawer_node')
 
-        self.declare_parameter('text_to_draw', 'ZSOLT')
-        self.declare_parameter('scale', 1.25)
-
         self.cmd_pub = self.create_publisher(Twist, '/turtle1/cmd_vel', 10)
         self.pose_sub = self.create_subscription(Pose, '/turtle1/pose', self.pose_callback, 10)
         self.set_pen_cli = self.create_client(SetPen, '/turtle1/set_pen')
@@ -45,40 +42,29 @@ class TextDrawerNode(Node):
         self.current_pose = msg
 
     def build_path(self):
-        text = str(self.get_parameter('text_to_draw').value)
-        raw_scale = self.get_parameter('scale').value
-        scale = float(raw_scale)
-
-        # Pozicionalas: 5 betu szepen kozepre illeszkedve a 11x11-es vasznon
+        # Fix, beégetett beállítások a maximális stabilitásért
+        text = 'ZSOLT'
+        scale = 1.25
         start_x = 0.9
         start_y = 4.8
         char_width = 0.7 * scale
         char_spacing = 0.45 * scale
 
         curr_x = start_x
-        char_idx = 0
-
-        for char in text.upper():
-            if char == ' ':
-                curr_x += char_width + char_spacing
-                continue
-
+        for char_idx, char in enumerate(text):
             color = COLORS[char_idx % len(COLORS)]
-            char_idx += 1
-
+            
             if char in FONT:
                 for p1, p2 in FONT[char]:
                     start_pt = (curr_x + p1[0] * scale, start_y + p1[1] * scale)
                     end_pt = (curr_x + p2[0] * scale, start_y + p2[1] * scale)
-                    # Toll fel -> odamegy
                     self.commands.append({'target': start_pt, 'pen_off': 1, 'color': color})
-                    # Toll le -> szakaszt huz
                     self.commands.append({'target': end_pt, 'pen_off': 0, 'color': color})
                 curr_x += char_width + char_spacing
 
-        # Befejezeskor felreallas: a teknos leuszik a sarokba toll nelkul
+        # Befejezeskor leuszik a sarokba
         self.commands.append({'target': (10.0, 1.0), 'pen_off': 1, 'color': (0, 0, 0)})
-        self.get_logger().info(f'Palyatervezes kesz. Szoveg: "{text}", Szakaszok szama: {len(self.commands)}')
+        self.get_logger().info(f'Palyatervezes kesz. Szoveg: "{text}"')
 
     def set_pen(self, off_val, rgb):
         pen_state = (off_val, rgb)
@@ -114,20 +100,17 @@ class TextDrawerNode(Node):
         dy = target_y - self.current_pose.y
         dist = math.sqrt(dx**2 + dy**2)
 
-        # Celpont elerve
         if dist < 0.06:
             self.cmd_index += 1
             if self.cmd_index >= len(self.commands):
-                self.get_logger().info('ZSOLT felirat elkeszult, teknos felreallt!')
+                self.get_logger().info('ZSOLT felirat elkeszult!')
             return
 
         target_angle = math.atan2(dy, dx)
         angle_err = target_angle - self.current_pose.theta
 
-        while angle_err > math.pi:
-            angle_err -= 2 * math.pi
-        while angle_err < -math.pi:
-            angle_err += 2 * math.pi
+        while angle_err > math.pi: angle_err -= 2 * math.pi
+        while angle_err < -math.pi: angle_err += 2 * math.pi
 
         twist = Twist()
         if abs(angle_err) > 0.15:
