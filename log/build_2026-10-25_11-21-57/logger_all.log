@@ -1,0 +1,96 @@
+[0.274s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'turtlesim_text_drawer']
+[0.274s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['turtlesim_text_drawer'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x78172a8b9070>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x78172a8b8da0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x78172a8b8da0>>, mixin_verb=('build',))
+[0.340s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.340s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.340s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.340s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.340s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.341s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.341s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/root/ros2_ws/src/turtlesim_text_drawer'
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.395s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_python' and name 'turtlesim_text_drawer'
+[0.395s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.395s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.395s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.395s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.395s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.436s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.436s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.484s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 28 installed packages in /root/dvrk2_ws/install
+[0.487s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /root/ros2_ws/install
+[0.504s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 445 installed packages in /opt/ros/jazzy
+[0.535s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.785s] Level 5:colcon.colcon_core.verb:set package 'turtlesim_text_drawer' build argument 'cmake_args' from command line to 'None'
+[0.785s] Level 5:colcon.colcon_core.verb:set package 'turtlesim_text_drawer' build argument 'cmake_target' from command line to 'None'
+[0.785s] Level 5:colcon.colcon_core.verb:set package 'turtlesim_text_drawer' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.785s] Level 5:colcon.colcon_core.verb:set package 'turtlesim_text_drawer' build argument 'cmake_clean_cache' from command line to 'False'
+[0.785s] Level 5:colcon.colcon_core.verb:set package 'turtlesim_text_drawer' build argument 'cmake_clean_first' from command line to 'False'
+[0.785s] Level 5:colcon.colcon_core.verb:set package 'turtlesim_text_drawer' build argument 'cmake_force_configure' from command line to 'False'
+[0.785s] Level 5:colcon.colcon_core.verb:set package 'turtlesim_text_drawer' build argument 'ament_cmake_args' from command line to 'None'
+[0.785s] Level 5:colcon.colcon_core.verb:set package 'turtlesim_text_drawer' build argument 'catkin_cmake_args' from command line to 'None'
+[0.785s] Level 5:colcon.colcon_core.verb:set package 'turtlesim_text_drawer' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.785s] DEBUG:colcon.colcon_core.verb:Building package 'turtlesim_text_drawer' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer', 'merge_install': False, 'path': '/root/ros2_ws/src/turtlesim_text_drawer', 'symlink_install': False, 'test_result_base': None}
+[0.786s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.787s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.788s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/root/ros2_ws/src/turtlesim_text_drawer' with build type 'ament_python'
+[0.789s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlesim_text_drawer', 'ament_prefix_path')
+[0.794s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.795s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer/hook/ament_prefix_path.ps1'
+[0.797s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer/hook/ament_prefix_path.dsv'
+[0.798s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer/hook/ament_prefix_path.sh'
+[0.800s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.801s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.335s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/root/ros2_ws/src/turtlesim_text_drawer'
+[1.335s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.335s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.627s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: bdist_dumb, egg_info, rotate, update_catalog, register, install_data, develop, easy_install, dist_info, check, install, build_ext, upload_docs, setopt, alias, build_py, test, install_scripts, editable_wheel, bdist, build_scripts, build, clean, bdist_rpm, init_catalog, symlink_data, extract_messages, saveopts, upload, sdist, install_lib, build_clib, install_headers, bdist_egg, compile_catalog, install_egg_info
+[2.635s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/build
+[3.790s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/build
+[3.792s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/turtlesim_text_drawer': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/turtlesim_text_drawer build --build-base /root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/build install --record /root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/install.log --install-scripts $base/lib/turtlesim_text_drawer --single-version-externally-managed install_data --force
+[5.025s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/turtlesim_text_drawer' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/turtlesim_text_drawer build --build-base /root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/build install --record /root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/install.log --install-scripts $base/lib/turtlesim_text_drawer --single-version-externally-managed install_data --force
+[5.030s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer' for CMake module files
+[5.030s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer' for CMake config files
+[5.031s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/lib'
+[5.031s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/bin'
+[5.032s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/lib/pkgconfig/turtlesim_text_drawer.pc'
+[5.032s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/lib/python3.12/site-packages'
+[5.032s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlesim_text_drawer', 'pythonpath')
+[5.032s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer/hook/pythonpath.ps1'
+[5.033s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer/hook/pythonpath.dsv'
+[5.034s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer/hook/pythonpath.sh'
+[5.035s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/bin'
+[5.035s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlesim_text_drawer)
+[5.035s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer/package.ps1'
+[5.037s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer/package.dsv'
+[5.038s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer/package.sh'
+[5.041s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer/package.bash'
+[5.042s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer/package.zsh'
+[5.042s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/colcon-core/packages/turtlesim_text_drawer)
+[5.043s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.043s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.044s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[5.044s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[5.120s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[5.121s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[5.121s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[5.121s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[5.122s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[5.123s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[5.123s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/src/turtlesim_text_drawer/install/local_setup.ps1'
+[5.124s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/ros2_ws/src/turtlesim_text_drawer/install/_local_setup_util_ps1.py'
+[5.126s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/src/turtlesim_text_drawer/install/setup.ps1'
+[5.129s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/src/turtlesim_text_drawer/install/local_setup.sh'
+[5.130s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/ros2_ws/src/turtlesim_text_drawer/install/_local_setup_util_sh.py'
+[5.131s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/src/turtlesim_text_drawer/install/setup.sh'
+[5.135s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/src/turtlesim_text_drawer/install/local_setup.bash'
+[5.136s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/src/turtlesim_text_drawer/install/setup.bash'
+[5.139s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/src/turtlesim_text_drawer/install/local_setup.zsh'
+[5.139s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/src/turtlesim_text_drawer/install/setup.zsh'

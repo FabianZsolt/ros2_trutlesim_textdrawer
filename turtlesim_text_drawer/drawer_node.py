@@ -5,29 +5,28 @@ from turtlesim.msg import Pose
 from turtlesim.srv import SetPen
 import math
 
-# Betuk definialasa 0..1-es koordinatarendszerben
 FONT = {
-    'R': [((0, 0), (0, 1)), ((0, 1), (0.7, 1)), ((0.7, 1), (0.7, 0.5)), ((0.7, 0.5), (0, 0.5)), ((0, 0.5), (0.7, 0))],
-    'O': [((0, 0), (0, 1)), ((0, 1), (0.7, 1)), ((0.7, 1), (0.7, 0)), ((0.7, 0), (0, 0))],
-    'S': [((0.7, 1), (0, 1)), ((0, 1), (0.5, 0.5)), ((0.5, 0.5), (0.7, 0.5)), ((0.7, 0.5), (0.7, 0)), ((0.7, 0), (0, 0))],
-    '2': [((0, 0.8), (0.2, 1)), ((0.2, 1), (0.7, 1)), ((0.7, 1), (0.7, 0.6)), ((0.7, 0.6), (0, 0)), ((0, 0), (0.7, 0))],
     'Z': [((0, 1), (0.7, 1)), ((0.7, 1), (0, 0)), ((0, 0), (0.7, 0))],
+    'S': [((0.7, 1), (0, 1)), ((0, 1), (0.5, 0.5)), ((0.5, 0.5), (0.7, 0.5)), ((0.7, 0.5), (0.7, 0)), ((0.7, 0), (0, 0))],
+    'O': [((0, 0), (0, 1)), ((0, 1), (0.7, 1)), ((0.7, 1), (0.7, 0)), ((0.7, 0), (0, 0))],
+    'L': [((0, 1), (0, 0)), ((0, 0), (0.7, 0))],
+    'T': [((0, 1), (0.7, 1)), ((0.35, 1), (0.35, 0))],
 }
 
-# Szinek betunkent (RGB): Piros, Zold, Narancs, Cian
 COLORS = [
-    (255, 60, 60),    # R - Piros
-    (60, 220, 60),    # O - Zold
-    (255, 160, 30),   # S - Narancs
-    (50, 200, 255),   # 2 - Cian
+    (0, 255, 100),   # Z
+    (225, 10, 255),  # S
+    (0, 255, 150),   # O
+    (225, 10, 255),  # L
+    (0, 255, 120),   # T
 ]
 
 class TextDrawerNode(Node):
     def __init__(self):
         super().__init__('text_drawer_node')
 
-        self.declare_parameter('text_to_draw', 'ROS 2')
-        self.declare_parameter('scale', 1.5)
+        self.declare_parameter('text_to_draw', 'ZSOLT')
+        self.declare_parameter('scale', 1.25)
 
         self.cmd_pub = self.create_publisher(Twist, '/turtle1/cmd_vel', 10)
         self.pose_sub = self.create_subscription(Pose, '/turtle1/pose', self.pose_callback, 10)
@@ -46,13 +45,15 @@ class TextDrawerNode(Node):
         self.current_pose = msg
 
     def build_path(self):
-        text = self.get_parameter('text_to_draw').get_parameter_value().string_value
-        scale = self.get_parameter('scale').get_parameter_value().double_value
+        text = str(self.get_parameter('text_to_draw').value)
+        raw_scale = self.get_parameter('scale').value
+        scale = float(raw_scale)
 
-        start_x = 0.8
-        start_y = 4.5
+        # Pozicionalas: 5 betu szepen kozepre illeszkedve a 11x11-es vasznon
+        start_x = 0.9
+        start_y = 4.8
         char_width = 0.7 * scale
-        char_spacing = 0.5 * scale
+        char_spacing = 0.45 * scale
 
         curr_x = start_x
         char_idx = 0
@@ -71,13 +72,13 @@ class TextDrawerNode(Node):
                     end_pt = (curr_x + p2[0] * scale, start_y + p2[1] * scale)
                     # Toll fel -> odamegy
                     self.commands.append({'target': start_pt, 'pen_off': 1, 'color': color})
-                    # Toll le -> megrajzolja
+                    # Toll le -> szakaszt huz
                     self.commands.append({'target': end_pt, 'pen_off': 0, 'color': color})
                 curr_x += char_width + char_spacing
 
-        # Vegere felreallas: a teknos usszon el a sarokba toll nelkul, hogy lathato legyen a rajz
+        # Befejezeskor felreallas: a teknos leuszik a sarokba toll nelkul
         self.commands.append({'target': (10.0, 1.0), 'pen_off': 1, 'color': (0, 0, 0)})
-        self.get_logger().info(f'Palyatervezes kesz. Szoveg: "{text}", Lepesszam: {len(self.commands)}')
+        self.get_logger().info(f'Palyatervezes kesz. Szoveg: "{text}", Szakaszok szama: {len(self.commands)}')
 
     def set_pen(self, off_val, rgb):
         pen_state = (off_val, rgb)
@@ -113,11 +114,11 @@ class TextDrawerNode(Node):
         dy = target_y - self.current_pose.y
         dist = math.sqrt(dx**2 + dy**2)
 
-        # Pont elerve
+        # Celpont elerve
         if dist < 0.06:
             self.cmd_index += 1
             if self.cmd_index >= len(self.commands):
-                self.get_logger().info('Rajz befejezve!')
+                self.get_logger().info('ZSOLT felirat elkeszult, teknos felreallt!')
             return
 
         target_angle = math.atan2(dy, dx)
@@ -129,7 +130,6 @@ class TextDrawerNode(Node):
             angle_err += 2 * math.pi
 
         twist = Twist()
-        # Ha a szoghiba nagyobb, alljon meg es csak forogjon (igy tokeletesen egyenesek lesznek a szarak)
         if abs(angle_err) > 0.15:
             twist.linear.x = 0.0
             twist.angular.z = 4.5 * angle_err
@@ -148,7 +148,8 @@ def main(args=None):
         pass
     finally:
         node.destroy_node()
-        rclpy.shutdown()
+        if rclpy.ok():
+            rclpy.shutdown()
 
 if __name__ == '__main__':
     main()

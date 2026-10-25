@@ -1,0 +1,26 @@
+[2.960s] Invoking command in '/root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/build --no-deps symlink_data
+[3.623s] running develop
+[4.070s] running egg_info
+[4.070s] creating turtlesim_text_drawer.egg-info
+[4.124s] writing turtlesim_text_drawer.egg-info/PKG-INFO
+[4.124s] writing dependency_links to turtlesim_text_drawer.egg-info/dependency_links.txt
+[4.125s] writing entry points to turtlesim_text_drawer.egg-info/entry_points.txt
+[4.125s] writing requirements to turtlesim_text_drawer.egg-info/requires.txt
+[4.126s] writing top-level names to turtlesim_text_drawer.egg-info/top_level.txt
+[4.126s] writing manifest file 'turtlesim_text_drawer.egg-info/SOURCES.txt'
+[4.223s] reading manifest file 'turtlesim_text_drawer.egg-info/SOURCES.txt'
+[4.224s] writing manifest file 'turtlesim_text_drawer.egg-info/SOURCES.txt'
+[4.274s] running build_ext
+[4.274s] Creating /root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/lib/python3.12/site-packages/turtlesim-text-drawer.egg-link (link to .)
+[4.275s] Installing drawer_node script to /root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/lib/turtlesim_text_drawer
+[4.276s] 
+[4.276s] Installed /root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer
+[4.276s] running symlink_data
+[4.277s] creating /root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/ament_index
+[4.277s] creating /root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/ament_index/resource_index
+[4.278s] creating /root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/ament_index/resource_index/packages
+[4.278s] symbolically linking /root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/resource/turtlesim_text_drawer -> /root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/ament_index/resource_index/packages
+[4.279s] symbolically linking /root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/package.xml -> /root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer
+[4.280s] creating /root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer/launch
+[4.281s] symbolically linking /root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/launch/drawer.launch.py -> /root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/share/turtlesim_text_drawer/launch
+[4.326s] Invoked command in '/root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/src/turtlesim_text_drawer/install/turtlesim_text_drawer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/ros2_ws/src/turtlesim_text_drawer/build/turtlesim_text_drawer/build --no-deps symlink_data
